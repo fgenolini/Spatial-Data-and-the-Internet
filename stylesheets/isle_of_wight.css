@@ -1,3 +1,11 @@
-﻿body {
+﻿/* Assignment for A1136: Spatial Data and the Internet */
+body {
     background-color: burlywood;
+}
+
+p {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 30px;
 }
