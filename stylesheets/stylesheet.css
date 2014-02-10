@@ -1,0 +1,22 @@
+/* Home page for A1136: Spatial Data and the Internet */
+body {
+    background-color: palevioletred;
+}
+
+p {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 10px;
+}
+
+h1 {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 30px;
+}
+
+#assignment {
+    text-shadow: 4px 4px 4px #aaa;
+}
