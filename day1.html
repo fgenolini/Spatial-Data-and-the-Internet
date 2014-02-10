@@ -10,9 +10,23 @@
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/day1.css">
 </head>
 <body>
-    <p>
+    <h1>
         Basic HTML and CSS
-    </p>
+    </h1>
+    <article>
+        <header>
+            <h1>Images</h1>
+        </header>
+        <p>
+            An image can be clicked:
+        </p>
+        <p>
+            <img src="images/francois_genolini.jpg" alt="Francois Genolini" usemap="#instrument_map">
+            <map name="instrument_map">
+                <area shape="rect" coords="0,0,82,235" href="http://en.wikipedia.org/wiki/Double_bass" alt="Double bass">
+            </map>
+        </p>
+    </article>
     <!-- Google Analytics -->
     <script>
         (function (i, s, o, g, r, a, m) {
@@ -24,7 +38,7 @@
         ga('create', 'UA-47932087-1', 'fgenolini.github.io');
         ga('send', 'pageview');
     </script>
-    <script src="javascripts/jquery-1.11.0.min.js"></script>
+    <script src="javascripts/jquery-2.1.0.min.js"></script>
     <script src="javascripts/day1.js"></script>
 </body>
 </html>
