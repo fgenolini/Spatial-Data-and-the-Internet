@@ -78,15 +78,36 @@ function createGoogleMaps() {
 
 // After Microsoft Bing Map API is loaded, create map objects and display them
 function createBingMaps() {
-    // http://www.bing.com/maps/?v=2&cp=47.640049~-122.129797&lvl=16&dir=0&sty=r&eo=0&q=redmond%2C%201%20Microsoft%20way&form=LMLTCC
+    var francoisGenoliniBingMapKey = "Aq0-VaNroXMdVfdlVLkkTceilJUYVhg1cyAw0vjVrrRB8jKHzRgcVLmHyfagMV3L";
     var redmondMapOptions = {
-        credentials: "Aq0-VaNroXMdVfdlVLkkTceilJUYVhg1cyAw0vjVrrRB8jKHzRgcVLmHyfagMV3L",
+        credentials: francoisGenoliniBingMapKey,
         center: new Microsoft.Maps.Location(47.640049, -122.129797),
         mapTypeId: Microsoft.Maps.MapTypeId.aerial, // Could also use "road"
         zoom: 16
     };
     var bingMapRedmond = new Microsoft.Maps.Map(document.getElementById("map_redmond"), redmondMapOptions);
     // XXX TODO call dispose() on the map after using it
+}
+
+// After Open Layers Map API is loaded, create map objects and display them
+function createOpenLayersMaps() {
+    var canadaMap = new OpenLayers.Map('map_canada');
+    var wholeEarth = new OpenLayers.Layer.WMS("OpenLayers WMS",
+            "http://vmap0.tiles.osgeo.org/wms/vmap0",
+            { layers: 'basic' });
+    var canada = new OpenLayers.Layer.WMS("Canada",
+        "http://www2.dmsolutions.ca/cgi-bin/mswms_gmap",
+        {
+            layers: "bathymetry,land_fn,park,drain_fn,drainage," +
+                "prov_bound,fedlimit,rail,road,popplace",
+            transparent: "true",
+            format: "image/png"
+        },
+        {
+            isBaseLayer: false
+        });
+    canadaMap.addLayers([wholeEarth, canada]);
+    canadaMap.zoomToMaxExtent();
 }
 
 $(document).ready(function () {
@@ -99,4 +120,6 @@ $(document).ready(function () {
         + "&sensor=false&" + googleMapCallback);
 
     createBingMaps();
+
+    createOpenLayersMaps();
 });
