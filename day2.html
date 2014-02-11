@@ -8,6 +8,7 @@
     <meta charset="utf-8" />
     <title>Day 2</title>
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/day2.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css">
 </head>
 <body>
     <h1>
@@ -18,6 +19,7 @@
         <li><a href="#google_maps">Google maps</a></li>
         <li><a href="#bing_maps">Bing maps</a></li>
         <li><a href="#openlayers_maps">OpenLayers maps</a></li>
+        <li><a href="#leaflet_maps">Leaflet maps</a></li>
     </ul>
     <a name="image_map"><h2>HTML Image Mapping</h2></a>
     <article>
@@ -69,6 +71,13 @@
         </header>
         <div id="map_canada" style="width: 500px; height: 380px;"></div>
     </article>
+    <a name="leaflet_maps"><h2>Leaflet Maps</h2></a>
+    <article>
+        <header>
+            <h3>London, UK</h3>
+        </header>
+        <div id="map_london" style="width: 500px; height: 380px;"></div>
+    </article>
     <!-- Google Analytics -->
     <script>
         (function (i, s, o, g, r, a, m) {
@@ -84,6 +93,7 @@
     <script charset="UTF-8" type="text/javascript" src="https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&s=1">
     </script>
     <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+    <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
     <script type="text/javascript" src="javascripts/day2.js"></script>
 </body>
 </html>

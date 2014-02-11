@@ -98,16 +98,28 @@ function createOpenLayersMaps() {
     var canada = new OpenLayers.Layer.WMS("Canada",
         "http://www2.dmsolutions.ca/cgi-bin/mswms_gmap",
         {
-            layers: "bathymetry,land_fn,park,drain_fn,drainage," +
-                "prov_bound,fedlimit,rail,road,popplace",
+            layers: "road,popplace",
             transparent: "true",
             format: "image/png"
         },
         {
-            isBaseLayer: false
+            isBaseLayer: false,
+            visibility: false
         });
-    canadaMap.addLayers([wholeEarth, canada]);
+    // OSM is not in the same projection as the others, don't use
+    var osm = new OpenLayers.Layer.OSM();
+    canadaMap.addLayers([wholeEarth, canada, osm]);
+    canadaMap.addControl(new OpenLayers.Control.LayerSwitcher());
     canadaMap.zoomToMaxExtent();
+}
+
+// After Leaflet Map API is loaded, create map objects and display them
+function createLeafletMaps() {
+    var londonMap = L.map('map_london').setView([51.505, -0.09], 13);
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; OpenStreetMap contributors',
+        maxZoom: 18
+    }).addTo(londonMap);
 }
 
 $(document).ready(function () {
@@ -122,4 +134,6 @@ $(document).ready(function () {
     createBingMaps();
 
     createOpenLayersMaps();
+
+    createLeafletMaps();
 });
