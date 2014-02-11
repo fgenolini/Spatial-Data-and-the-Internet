@@ -1,10 +1,11 @@
 /*
 Day 2 of module A1136 Spatial Data and the Internet, Cranfield University (UK)
  */
-if(typeof jQuery === 'undefined'){
+if (typeof jQuery === 'undefined') {
     document.write(unescape("%3Cscript src='javascripts/jquery-1.11.0.min.js' type='text/javascript'%3E%3C/script%3E"));
 }
-$(document).ready(function () {
+
+function createMaps() {
     var googleMapCranfield;
     var lineColour = '#0000FF'; // Blue
     var lineThickness = 3;
@@ -72,5 +73,13 @@ $(document).ready(function () {
     setupCranfieldMarkers();
     google.maps.event.trigger(googleMapSydney, 'resize');
     google.maps.event.trigger(googleMapCranfield, 'resize');
+}
 
+$(document).ready(function () {
+    // Asynchronous loading of Google maps API to allow full HTML to load first
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBuIzCvh7jFg3S5NoH8SQmPpVDjNkmFDGo&sensor=false&' +
+        'callback=createMaps';
+    document.body.appendChild(script);
 });
