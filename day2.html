@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!--
+   Day 2 of module A1136: Spatial Data and the Internet
+    University of Cranfield (UK)
+-->
+<head>
+    <meta charset="utf-8" />
+    <title>Day 2</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/day2.css">
+</head>
+<body>
+    <h1>
+        HTML Image Mapping
+    </h1>
+    <article>
+        <header>
+            <h1>House entrance door</h1>
+        </header>
+        <p>
+            Original door on the left (Thermal survey), new insulated door on the right:
+        </p>
+        <p>
+            <img src="images/house_door.png" alt="House door" title="House door" usemap="#door_map">
+            <map name="door_map">
+                <area shape="rect" coords="135,547,361,623" href="house_report.html#threshold" alt="Coldest area bottom of door" title="Coldest area bottom of door">
+                <area shape="circle" coords="146,352,17" href="house_report.html#key_hole" alt="Key hole" title="Key hole">
+                <area shape="poly" coords="42,315,95,314,130,385,136,626,77,625,74,496,46,496" href="house_report.html#stair_case" alt="Stair case" title="Stair case">
+                <area shape="poly" alt="Radiator" title="Radiator" coords="52,497,66,494,75,621,16,625,18,593" href="house_report.html#radiator" target="" />
+                <area shape="rect" alt="Letter box" title="Letter box" coords="216,385,274,403" href="house_report.html#letter_box" target="" />
+                <area shape="poly" alt="Electrical meter" title="Electrical meter" coords="368,404,428,441,422,568,363,497,359,475" href="house_report.html#electrical_meter" target="" />
+                <area shape="poly" alt="Draughty door" title="Draughty door" coords="130,70,364,72,361,401,355,406,354,559,337,558,341,313,346,306,338,114,312,87,146,88,131,106,128,80" href="house_report.html#draughty_door" target="" />
+                <area shape="circle" alt="Alarm panel" title="Alarm panel" coords="432,203,17" href="house_report.html#alarm_panel" target="" />
+                <!-- Created by Online Image Map Editor (http://www.maschek.hu/imagemap/index) -->
+            </map>
+        </p>
+    </article>
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-47932087-1', 'fgenolini.github.io');
+        ga('send', 'pageview');
+    </script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="javascripts/day2.js"></script>
+</body>
+</html>
