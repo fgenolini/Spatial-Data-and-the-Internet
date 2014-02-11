@@ -15,7 +15,8 @@
     </h1>
     <ul>
         <li><a href="#image_map">Image mapping</a></li>
-        <li><a href="#google_map">Google map</a></li>
+        <li><a href="#google_maps">Google maps</a></li>
+        <li><a href="#bing_maps">Bing maps</a></li>
     </ul>
     <a name="image_map"><h2>HTML Image Mapping</h2></a>
     <article>
@@ -40,7 +41,7 @@
             </map>
         </p>
     </article>
-    <a name="google_map"><h2>Google Map</h2></a>
+    <a name="google_maps"><h2>Google Maps</h2></a>
     <article>
         <header>
             <h3>Sydney Australia</h3>
@@ -52,6 +53,13 @@
             <h3>Cranfield University, UK</h3>
         </header>
         <div id="map_cranfield" style="width:500px;height:380px;"></div>
+    </article>
+    <a name="bing_maps"><h2>Bing Maps</h2></a>
+    <article>
+        <header>
+            <h3>Redmond, USA</h3>
+        </header>
+        <div id="map_redmond" style="position: relative; width: 500px; height: 380px;"></div>
     </article>
     <!-- Google Analytics -->
     <script>
@@ -65,6 +73,8 @@
         ga('send', 'pageview');
     </script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script charset="UTF-8" type="text/javascript" src="https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&s=1">
+    </script>
     <script type="text/javascript" src="javascripts/day2.js"></script>
 </body>
 </html>

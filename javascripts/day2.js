@@ -5,7 +5,8 @@ if (typeof jQuery === 'undefined') {
     document.write(unescape("%3Cscript src='javascripts/jquery-1.11.0.min.js' type='text/javascript'%3E%3C/script%3E"));
 }
 
-function createMaps() {
+// After Google Map API is loaded, create map objects and display them
+function createGoogleMaps() {
     var googleMapCranfield;
     var lineColour = '#0000FF'; // Blue
     var lineThickness = 3;
@@ -75,11 +76,27 @@ function createMaps() {
     google.maps.event.trigger(googleMapCranfield, 'resize');
 }
 
+// After Microsoft Bing Map API is loaded, create map objects and display them
+function createBingMaps() {
+    // http://www.bing.com/maps/?v=2&cp=47.640049~-122.129797&lvl=16&dir=0&sty=r&eo=0&q=redmond%2C%201%20Microsoft%20way&form=LMLTCC
+    var redmondMapOptions = {
+        credentials: "Aq0-VaNroXMdVfdlVLkkTceilJUYVhg1cyAw0vjVrrRB8jKHzRgcVLmHyfagMV3L",
+        center: new Microsoft.Maps.Location(47.640049, -122.129797),
+        mapTypeId: Microsoft.Maps.MapTypeId.aerial, // Could also use "road"
+        zoom: 16
+    };
+    var bingMapRedmond = new Microsoft.Maps.Map(document.getElementById("map_redmond"), redmondMapOptions);
+    // XXX TODO call dispose() on the map after using it
+}
+
 $(document).ready(function () {
     // Asynchronous loading of Google maps API to allow full HTML to load first
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBuIzCvh7jFg3S5NoH8SQmPpVDjNkmFDGo&sensor=false&' +
-        'callback=createMaps';
-    document.body.appendChild(script);
+    var googleMapScriptUrl = "https://maps.googleapis.com/maps/api/js?v=3.exp";
+    var francoisGenoliniGoogleMapKey = "AIzaSyBuIzCvh7jFg3S5NoH8SQmPpVDjNkmFDGo";
+    var googleMapCallback = "callback=createGoogleMaps";
+    $.getScript(googleMapScriptUrl
+        + "&key=" + francoisGenoliniGoogleMapKey
+        + "&sensor=false&" + googleMapCallback);
+
+    createBingMaps();
 });
