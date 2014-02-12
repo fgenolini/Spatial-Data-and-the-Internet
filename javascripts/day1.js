@@ -78,9 +78,16 @@ $(document).ready(function () {
     isleofwight_grass_red.onload = function () {
         // Draw background image (Isle of Wight grass)
         header_canvas_context.drawImage(isleofwight_grass_red, 0, 0);
-        // Write text of title on top right square, tilt it
+        // Write text of intro at bottom left (with mirror text under it)
         header_canvas_context.font = "12px sans-serif";
+        header_canvas_context.save();
+        header_canvas_context.translate(header_canvas[0].width /2, header_canvas[0].height /2);
+        header_canvas_context.scale(1, -1);
+        header_canvas_context.fillStyle = 'red';
+        header_canvas_context.fillText(day1_intro, -363, -148);
+        header_canvas_context.restore();
         header_canvas_context.fillText(day1_intro, 10, 310);
+        // Write text of title on top right square, tilt it
         header_canvas_context.font = "32px sans-serif";
         header_canvas_context.rotate(9 * Math.PI / 180);
         header_canvas_context.translate(590, -67);
