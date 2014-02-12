@@ -2,7 +2,7 @@
 <html lang="en">
 <!--
    Day 1 of module A1136: Spatial Data and the Internet
-    University of Cranfield (UK)
+   Cranfield University (UK)
 -->
 <head>
     <meta charset="utf-8" />
@@ -10,35 +10,31 @@
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/day1.css">
 </head>
 <body>
-    <h1>
-        Basic HTML and CSS
-    </h1>
+    <header id="day1_header">
+        <h1 id="day1_title">
+            Basic HTML and CSS
+        </h1>
+        <p id="day1_intro">
+            Day 1: introduction to Spatial Data and the Internet.
+            Workshops exploring the basics of web technologies: HTML and CSS
+        </p>
+    </header>
     <article>
         <header>
-            <h1>Images</h1>
+            <h2>Images</h2>
         </header>
         <p>
-            An image can be clicked:
+            Good HTML information is made compelling by appropriate CSS and suitable imagery.  For more information on the contents, click on the area in focus:
         </p>
         <p>
-            <img src="images/francois_genolini.jpg" alt="Francois Genolini" title="Francois Genolini" usemap="#instrument_map">
+            <img src="images/francois_genolini.png" alt="Francois Genolini" title="Francois Genolini" usemap="#instrument_map">
             <map name="instrument_map">
                 <area shape="rect" coords="0,0,82,235" href="http://en.wikipedia.org/wiki/Double_bass" alt="Double bass" title="Double bass">
             </map>
         </p>
     </article>
-    <!-- Google Analytics -->
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-47932087-1', 'fgenolini.github.io');
-        ga('send', 'pageview');
-    </script>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="javascripts/day1.js"></script>
+    <script type="text/javascript" src="javascripts/google_analytics.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="javascripts/day1.js"></script>
 </body>
 </html>
