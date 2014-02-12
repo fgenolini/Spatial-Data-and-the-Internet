@@ -85,7 +85,13 @@ $(document).ready(function () {
         header_canvas_context.scale(1, -1);
         header_canvas_context.transform(1, 0, -0.6, 1, 0, 0);
         header_canvas_context.fillStyle = 'lightgrey';
-        header_canvas_context.fillText(day1_intro, -451, -148);
+        // Add some blur
+        header_canvas_context.shadowColor = "lightgrey";
+        header_canvas_context.shadowOffsetX = 0;
+        header_canvas_context.shadowOffsetY = 0;
+        header_canvas_context.shadowBlur = 3;
+        header_canvas_context.strokeStyle="lightgrey";
+        header_canvas_context.strokeText(day1_intro, -451, -149);
         header_canvas_context.restore();
         header_canvas_context.fillStyle = 'white';
         header_canvas_context.fillText(day1_intro, 10, 310);
