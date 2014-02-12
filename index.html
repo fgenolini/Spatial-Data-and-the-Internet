@@ -2,7 +2,7 @@
 <html lang="en">
 <!--
    Home page for module A1136: Spatial Data and the Internet
-    Cranfield University (UK)
+   Cranfield University (UK)
 -->
 <head>
     <meta charset='utf-8' />
@@ -11,49 +11,38 @@
     <title>Spatial data and the internet</title>
 </head>
 <body>
-    <header>
-        <h1>Spatial data and the Internet</h1>
-
-        <p>
+    <header id="week_header">
+        <h1 id="course_title">Spatial data and the Internet</h1>
+        <p id="course_intro">
             Cranfield University (UK) course week A1136: Spatial Data and the Internet
         </p>
     </header>
-    <article>
-        <p>
-            <a id="assignment" href="isle_of_wight.html">Assignment</a> (not started yet)
+    <article id="assignment_article">
+        <p id="assignment">
+            <a id="assignment_link" href="isle_of_wight.html">Assignment</a> Isle of Wight
         </p>
     </article>
-    <article>
-        <p>
-            <a href="day1.html">Day 1</a> HTML and CSS, simple image map
+    <article id="day_article">
+        <p id="day1">
+            <a class="day" href="day1.html">Day 1</a> HTML and CSS, simple image map
         </p>
-        <p>
-            <a href="day2.html">Day 2</a> HTML and web map
+        <p id="day2">
+            <a class="day" href="day2.html">Day 2</a> HTML and web map
         </p>
-        <p>
-            <a href="day3.html">Day 3</a> XML, Google Earth and ArcGIS (in progress)
+        <p id="day3">
+            <a class="day" href="day3.html">Day 3</a> XML, Google Earth and KML
         </p>
     </article>
-    <footer>
-        <p>
-            <a href="https://github.com/fgenolini/Spatial-Data-and-the-Internet">View on GitHub</a>
-            <a href="https://github.com/fgenolini/Spatial-Data-and-the-Internet/zipball/master">Download this project as a .zip file</a>
-            <a href="https://github.com/fgenolini/Spatial-Data-and-the-Internet/tarball/master">Download this project as a tar.gz file</a>
+    <footer id="github_footer">
+        <p id="github_links">
+            <a id="source_control" class="github_link" href="https://github.com/fgenolini/Spatial-Data-and-the-Internet">View on GitHub</a>
+            <a id="zip" class="github_link" href="https://github.com/fgenolini/Spatial-Data-and-the-Internet/zipball/master">Download this project as a .zip file</a>
+            <a id="tgz" class="github_link" href="https://github.com/fgenolini/Spatial-Data-and-the-Internet/tarball/master">Download this project as a tar.gz file</a>
         </p>
-        <p>Spatial-data-and-the-internet maintained by <a href="https://github.com/fgenolini">fgenolini</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+        <p id="attribution">Spatial-data-and-the-internet maintained by <a href="https://github.com/fgenolini">fgenolini</a></p>
+        <p id="hosted_by">Published with <a href="http://pages.github.com">GitHub Pages</a></p>
     </footer>
-    <!-- Google Analytics -->
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-47932087-1', 'fgenolini.github.io');
-        ga('send', 'pageview');
-    </script>
+    <script type="text/javascript" src="javascripts/google_analytics.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="javascripts/main.js"></script>
 </body>
