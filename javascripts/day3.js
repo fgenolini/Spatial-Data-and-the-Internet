@@ -14,7 +14,7 @@ $(document).ready(function () {
         ge.getNavigationControl().setVisibility(ge.VISIBILITY_AUTO);
         var link = ge.createLink('');
         //var href = 'http://public.cranfield.ac.uk/ss01shh/gim/25k.kml';
-        var href = 'http://fgenolini.github.io/Spatial-Data-and-the-Internet/kml/hangar.kml';
+        var href = 'http://fgenolini.github.io/Spatial-Data-and-the-Internet/kml/hangar.kmz';
         link.setHref(href);
         var networkLink = ge.createNetworkLink('');
         networkLink.set(link, true, true);
