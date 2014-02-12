@@ -7,7 +7,20 @@ and edited to remove the text
 if (typeof jQuery === 'undefined') {
     document.write(unescape("%3Cscript src='javascripts/jquery-1.11.0.min.js' type='text/javascript'%3E%3C/script%3E"));
 }
+
+// Use JavaScript to replace title and intro with a canvas (picture)
 $(document).ready(function () {
+    // Find out if HTML 5 canvas is supported
+    function isCanvasSupported() {
+        var elem = document.createElement('canvas');
+        return !!(elem.getContext && elem.getContext('2d'));
+    }
+
+    if (!isCanvasSupported()) {
+        // No Canvas, probably not HTML 5
+        return;
+    }
+
     // Trim spaces and non-printing characters at both ends
     function trim1(str) {
         return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
