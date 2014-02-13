@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" ?>
+<configuration>
+    <label>Google Street View Widget</label>
+    <widgetversion>3.6</widgetversion>
+    <icon>assets/images/i_gsv.png</icon>
+    <openbydefault>true</openbydefault>
+    <description>This Google Street View Widget allows you to view Google Street View Panoramas in a popup window. The widget use Google Maps API Version 3 and has almost all the API options for the Street View Panorama that are available in the API configurable in the widgets xml. A lot of attention has gone into the UI (User Inferface) and UX (User Experience) of this widget and a lot of cross browser testing has been done. Tested on Safari for windows 5.1.7, Internet Explorer 9, Opera 12.15, FireFox 21.0, and Chrome 27.0.1453.110 m.</description>
+    <helpurl>http://www.arcgis.com/home/item.html?id=b4259b1cf73e4fa3b04e7bdf75fee29b</helpurl>
+</configuration>
