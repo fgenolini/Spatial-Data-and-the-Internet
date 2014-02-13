@@ -1,4 +1,9 @@
-/* Home page for A1136: Spatial Data and the Internet */
+/*
+  Home page for A1136: Spatial Data and the Internet
+
+  Image copied from http://www.visitisleofwight.co.uk/acoustic-isle 
+  and edited to remove the text, colour changed to lilac
+*/
 body {
     background-color: palevioletred;
 }
@@ -15,6 +20,34 @@ h1 {
     font-weight: 700;
     font-size: 32px;
     line-height: 30px;
+}
+
+#index_header {
+    width: 746px;
+    height: 325px;
+    background-image: url('../images/isleofwight_beach_lilac.png');
+    position: relative;
+}
+
+#index_title {
+    float: right;
+    height: 280px;
+    width: 150px;
+    margin: 10px 10px 0px 0px;
+    word-wrap: break-word;
+    line-height: 40px;
+    transform: rotate(9deg);
+    -ms-transform: rotate(9deg); /* IE 9 */
+    -webkit-transform: rotate(9deg); /* Safari and Chrome */
+}
+
+#index_intro {
+    margin-left: 10px;
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    font-size: 12px;
+    line-height: 10px;
 }
 
 #assignment {
