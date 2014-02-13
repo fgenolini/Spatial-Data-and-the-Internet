@@ -16,3 +16,17 @@ p {
     font-size: 12px;
     line-height: 10px;
 }
+
+#day1_header {
+    width: 746px;
+    height: 325px;
+    background-image: url('../images/isleofwight_grass_red.png');
+}
+
+#day1_title {
+    height: 280px;
+}
+
+#day1_intro {
+    margin-left: 10px;
+}
