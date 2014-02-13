@@ -23,7 +23,7 @@
   <widget right="20" top="55"    config="widgets/MapSwitcher/MapSwitcherWidget.xml" url="widgets/MapSwitcher/MapSwitcherWidget.swf"/>
   <widget left="0"   top="0"     config="widgets/HeaderController/HeaderControllerWidget.xml" url="widgets/HeaderController/HeaderControllerWidget.swf"/>
 
-  <!--
+  <!-- Works fine: world map
   <map wraparound180="true" initialextent="12042000 -5619000 17795000 -952000" top="40" addarcgisbasemaps="true">
     <operationallayers>
       <layer label="Boundaries and Places" type="tiled" visible="true"
@@ -42,12 +42,25 @@
   </map>
   -->
 
+  <!-- Only works from within Cranfield University (and only for the duration of the course)
   <map wraparound180="true" initialextent="-40300 4664800 -16200 4679000" top="40" addarcgisbasemaps="true">
     <operationallayers>
       <layer label="Land use" type="feature" visible="true"
              url="http://ssw7311f.sims.cranfield.ac.uk:6080/arcgis/rest/services/SDI/SDI/MapServer/1"/>
       <layer label="AOI" type="feature" visible="true"
              url="http://ssw7311f.sims.cranfield.ac.uk:6080/arcgis/rest/services/SDI/SDI/MapServer/0"/>
+    </operationallayers>
+  </map>
+  -->
+  
+  <map wraparound180="true" initialextent="-946000 6462000 594000 7369000" top="40" addarcgisbasemaps="true">
+    <operationallayers>
+      <layer label="Soilscapes" type="dynamic" visible="true"
+             url="http://www.landis.org.uk/arcgis/rest/services/Soilscapes/natmapsoilscapes/MapServer"
+             alpha="0.5" />
+      <layer label="Hillshade" type="dynamic" visible="true"
+             url="http://www.landis.org.uk/arcgis/rest/services/LandIS/SoilMapOutlines/MapServer"
+             alpha="0.5" />
     </operationallayers>
   </map>
 
@@ -84,11 +97,13 @@
             config="widgets/Query/QueryWidget_Louisville_PoliceStations.xml"
             url="widget/Query/QueryWidget.swf"/>
         -->
+    <!-- Mostly broken (when popups are not allowed or when using Chrome):
     <widget label="Google Street View" width="380"
             preload="open"
             config="widgets/StreetView/StreetViewWidget.xml"
             icon="widgets/StreetView/assets/images/i_gsv.png"
             url="widgets/StreetView/StreetViewWidget.swf"/>
+        -->
     <!--
         <widget label="My first widget"
                 icon="assets/images/i_widget.png"
