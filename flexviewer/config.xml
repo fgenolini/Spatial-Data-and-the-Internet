@@ -67,17 +67,24 @@
             icon="assets/images/i_print.png"
             config="widgets/Print/PrintWidget.xml"
             url="widgets/Print/PrintWidget.swf"/>
+    <!--
     <widget label="Traffic Cameras"
             icon="assets/images/i_camera.png"
-            config="widgets/Query/QueryWidget_Louisville_TrafficCams.xml"
+            config="widgets/Query/QueryWidget_Louisville_PoliceStations.xml"
             url="widget/Query/QueryWidget.swf"/>
+        -->
+    <widget label="Google Street View" width="380"
+            preload="open"
+            config="widgets/StreetView/StreetViewWidget.xml"
+            icon="widgets/StreetView/assets/images/i_gsv.png"
+            url="widgets/StreetView/StreetViewWidget.swf"/>
     <!--
         <widget label="My first widget"
                 icon="assets/images/i_widget.png"
                 config="widgets/Samples/HelloWorld/HelloWorldWidget.xml"
                 url="widgets/Samples/HelloWorld/HelloWorldWidget.swf"/>
         -->
-  
+
   </widgetcontainer>
 
 </configuration>
