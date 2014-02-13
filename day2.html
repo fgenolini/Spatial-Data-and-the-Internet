@@ -11,17 +11,25 @@
     <link rel="stylesheet" type="text/css" media="screen" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css">
 </head>
 <body>
-    <h1>
-        Image mapping and web maps
-    </h1>
-    <ul>
-        <li><a href="#image_map">Image mapping</a></li>
-        <li><a href="#google_maps">Google maps</a></li>
-        <li><a href="#bing_maps">Bing maps</a></li>
-        <li><a href="#openlayers_maps">OpenLayers maps</a></li>
-        <li><a href="#leaflet_maps">Leaflet maps</a></li>
-    </ul>
-    <a name="image_map"><h2>HTML Image Mapping</h2></a>
+    <header id="day2_header">
+        <h1 id="day2_title">
+            Image mapping and web maps
+        </h1>
+        <p id="day2_intro">
+            Day 2: Key technologies for <a href="index.html">Spatial Data and the Internet</a>:
+            image map, JavaScript, web mapping APIs (Google Maps...)
+        </p>
+    </header>
+    <p>
+        <ul>
+            <li><a href="#image_map">HTML image map</a></li>
+            <li><a href="#google_maps">Google maps</a></li>
+            <li><a href="#bing_maps">Bing maps</a></li>
+            <li><a href="#openlayers_maps">OpenLayers maps</a></li>
+            <li><a href="#leaflet_maps">Leaflet maps</a></li>
+        </ul>
+    </p>
+    <a name="image_map"><h2>HTML Image Map</h2></a>
     <article>
         <header>
             <h3>House entrance door</h3>
@@ -49,39 +57,38 @@
         <header>
             <h3>Sydney Australia</h3>
         </header>
-        <div id="map_sydney" style="width:500px;height:380px;"></div>
+        <div id="map_sydney" class="map_api"></div>
     </article>
     <article>
         <header>
             <h3>Cranfield University, UK</h3>
         </header>
-        <div id="map_cranfield" style="width:500px;height:380px;"></div>
+        <div id="map_cranfield" class="map_api"></div>
     </article>
     <a name="bing_maps"><h2>Bing Maps</h2></a>
     <article>
         <header>
             <h3>Redmond, USA</h3>
         </header>
-        <div id="map_redmond" style="position: relative; width: 500px; height: 380px;"></div>
+        <div id="map_redmond" class="map_api"></div>
     </article>
     <a name="openlayers_maps"><h2>OpenLayers Maps</h2></a>
     <article>
         <header>
             <h3>Canada</h3>
         </header>
-        <div id="map_canada" style="width: 500px; height: 380px;"></div>
+        <div id="map_canada" class="map_api"></div>
     </article>
     <a name="leaflet_maps"><h2>Leaflet Maps</h2></a>
     <article>
         <header>
             <h3>London, UK</h3>
         </header>
-        <div id="map_london" style="width: 500px; height: 380px;"></div>
+        <div id="map_london" class="map_api"></div>
     </article>
     <script type="text/javascript" src="javascripts/google_analytics.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script charset="UTF-8" type="text/javascript" src="https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&s=1">
-    </script>
+    <script type="text/javascript" src="https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&s=1"></script>
     <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
     <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
     <script type="text/javascript" src="javascripts/day2.js"></script>
