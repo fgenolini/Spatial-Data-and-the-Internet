@@ -1,4 +1,9 @@
-﻿/* Day 2 of A1136: Spatial Data and the Internet */
+﻿/*
+  Day 2 of A1136: Spatial Data and the Internet
+
+  Image copied from http://www.visitisleofwight.co.uk/acoustic-isle 
+  and edited to remove the text, colour changed to blue
+*/
 body {
     background-color: lightblue;
 }
@@ -10,9 +15,55 @@ h1 {
     line-height: 30px;
 }
 
+h2 {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+}
+
 p {
     font-family: 'Segoe UI', sans-serif;
     font-weight: 400;
     font-size: 12px;
     line-height: 10px;
+}
+
+#day2_header {
+    width: 746px;
+    height: 325px;
+    background-image: url('../images/isleofwight_tower_blue.png');
+    position: relative;
+}
+
+#day2_title {
+    float: right;
+    height: 280px;
+    width: 150px;
+    margin: 7px 10px 0px 0px;
+    word-wrap: break-word;
+    line-height: 40px;
+    transform: rotate(9deg);
+    -ms-transform: rotate(9deg); /* IE 9 */
+    -webkit-transform: rotate(9deg); /* Safari and Chrome */
+    color: white;
+}
+
+#day2_intro {
+    margin-left: 10px;
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    font-size: 12px;
+    line-height: 10px;
+    color: white;
+}
+
+.map_api {
+    width: 500px;
+    height: 380px;
+}
+
+#map_redmond {
+    position: relative;
 }

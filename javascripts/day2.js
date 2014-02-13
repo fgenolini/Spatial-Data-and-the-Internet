@@ -1,10 +1,11 @@
 /*
-Day 2 of module A1136 Spatial Data and the Internet, Cranfield University (UK)
+  Day 2 of module A1136 Spatial Data and the Internet, Cranfield University (UK)
+
+  Web mapping APIs for JavaScript
  */
 if (typeof jQuery === 'undefined') {
     document.write(unescape("%3Cscript src='javascripts/jquery-1.11.0.min.js' type='text/javascript'%3E%3C/script%3E"));
 }
-
 // After Google Map API is loaded, create map objects and display them
 function createGoogleMaps() {
     var googleMapCranfield;
@@ -76,53 +77,53 @@ function createGoogleMaps() {
     google.maps.event.trigger(googleMapCranfield, 'resize');
 }
 
-// After Microsoft Bing Map API is loaded, create map objects and display them
-function createBingMaps() {
-    var francoisGenoliniBingMapKey = "Aq0-VaNroXMdVfdlVLkkTceilJUYVhg1cyAw0vjVrrRB8jKHzRgcVLmHyfagMV3L";
-    var redmondMapOptions = {
-        credentials: francoisGenoliniBingMapKey,
-        center: new Microsoft.Maps.Location(47.640049, -122.129797),
-        mapTypeId: Microsoft.Maps.MapTypeId.aerial, // Could also use "road"
-        zoom: 16
-    };
-    var bingMapRedmond = new Microsoft.Maps.Map(document.getElementById("map_redmond"), redmondMapOptions);
-    // XXX TODO call dispose() on the map after using it
-}
-
-// After Open Layers Map API is loaded, create map objects and display them
-function createOpenLayersMaps() {
-    var canadaMap = new OpenLayers.Map('map_canada');
-    var wholeEarth = new OpenLayers.Layer.WMS("OpenLayers WMS",
-            "http://vmap0.tiles.osgeo.org/wms/vmap0",
-            { layers: 'basic' });
-    var canada = new OpenLayers.Layer.WMS("Canada",
-        "http://www2.dmsolutions.ca/cgi-bin/mswms_gmap",
-        {
-            layers: "road,popplace",
-            transparent: "true",
-            format: "image/png"
-        },
-        {
-            isBaseLayer: false,
-            visibility: false
-        });
-    // OSM is not in the same projection as the others, don't use
-    var osm = new OpenLayers.Layer.OSM();
-    canadaMap.addLayers([wholeEarth, canada, osm]);
-    canadaMap.addControl(new OpenLayers.Control.LayerSwitcher());
-    canadaMap.zoomToMaxExtent();
-}
-
-// After Leaflet Map API is loaded, create map objects and display them
-function createLeafletMaps() {
-    var londonMap = L.map('map_london').setView([51.505, -0.09], 13);
-    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; OpenStreetMap contributors',
-        maxZoom: 18
-    }).addTo(londonMap);
-}
-
 $(document).ready(function () {
+    // After Microsoft Bing Map API is loaded, create map objects and display them
+    function createBingMaps() {
+        var francoisGenoliniBingMapKey = "Aq0-VaNroXMdVfdlVLkkTceilJUYVhg1cyAw0vjVrrRB8jKHzRgcVLmHyfagMV3L";
+        var redmondMapOptions = {
+            credentials: francoisGenoliniBingMapKey,
+            center: new Microsoft.Maps.Location(47.640049, -122.129797),
+            mapTypeId: Microsoft.Maps.MapTypeId.aerial, // Could also use "road"
+            zoom: 16
+        };
+        var bingMapRedmond = new Microsoft.Maps.Map(document.getElementById("map_redmond"), redmondMapOptions);
+        // XXX TODO call dispose() on the map after using it
+    }
+
+    // After Open Layers Map API is loaded, create map objects and display them
+    function createOpenLayersMaps() {
+        var canadaMap = new OpenLayers.Map('map_canada');
+        var wholeEarth = new OpenLayers.Layer.WMS("OpenLayers WMS",
+                "http://vmap0.tiles.osgeo.org/wms/vmap0",
+                { layers: 'basic' });
+        var canada = new OpenLayers.Layer.WMS("Canada",
+            "http://www2.dmsolutions.ca/cgi-bin/mswms_gmap",
+            {
+                layers: "road,popplace",
+                transparent: "true",
+                format: "image/png"
+            },
+            {
+                isBaseLayer: false,
+                visibility: false
+            });
+        // OSM is not in the same projection as the others, don't use
+        var osm = new OpenLayers.Layer.OSM();
+        canadaMap.addLayers([wholeEarth, canada, osm]);
+        canadaMap.addControl(new OpenLayers.Control.LayerSwitcher());
+        canadaMap.zoomToMaxExtent();
+    }
+
+    // After Leaflet Map API is loaded, create map objects and display them
+    function createLeafletMaps() {
+        var londonMap = L.map('map_london').setView([51.505, -0.09], 13);
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; OpenStreetMap contributors',
+            maxZoom: 18
+        }).addTo(londonMap);
+    }
+
     // Asynchronous loading of Google maps API to allow full HTML to load first
     var googleMapScriptUrl = "https://maps.googleapis.com/maps/api/js?v=3.exp";
     var francoisGenoliniGoogleMapKey = "AIzaSyBuIzCvh7jFg3S5NoH8SQmPpVDjNkmFDGo";
