@@ -25,7 +25,8 @@ $(document).ready(function () {
     function init() {
         var esriMapOptions = {
             center: [-0.268542, 38.638987],
-            zoom: 6
+            zoom: 12,
+            basemap: "streets"
         };
         var map = new esri.Map("map", esriMapOptions);
 
