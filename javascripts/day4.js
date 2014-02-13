@@ -23,14 +23,22 @@ $(document).ready(function () {
     dojo.require("esri.map");
 
     function init() {
-        var map = new esri.Map("map");
+        var esriMapOptions = {
+            center: [-0.268542, 38.638987],
+            zoom: 6
+        };
+        var map = new esri.Map("map", esriMapOptions);
 
         // Base map showing cultural information
         var baseMap = new esri.layers.ArcGISTiledMapServiceLayer(esriPublicServer);
         map.addLayer(baseMap);
 
         // Cranfield University sample data set served from private server
-        var layer = new esri.layers.ArcGISDynamicMapServiceLayer(cranfieldUniversityLocalServer);
+        var cranfieldLayerOptions = {
+            opacity: 0.6
+        };
+        var layer = new esri.layers.ArcGISDynamicMapServiceLayer(cranfieldUniversityLocalServer,
+            cranfieldLayerOptions);
         map.addLayer(layer);
         var resizeTimer;
         dojo.connect(map, 'onLoad', function (theMap) {
