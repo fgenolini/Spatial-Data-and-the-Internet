@@ -23,6 +23,7 @@
   <widget right="20" top="55"    config="widgets/MapSwitcher/MapSwitcherWidget.xml" url="widgets/MapSwitcher/MapSwitcherWidget.swf"/>
   <widget left="0"   top="0"     config="widgets/HeaderController/HeaderControllerWidget.xml" url="widgets/HeaderController/HeaderControllerWidget.swf"/>
 
+  <!--
   <map wraparound180="true" initialextent="12042000 -5619000 17795000 -952000" top="40" addarcgisbasemaps="true">
     <operationallayers>
       <layer label="Boundaries and Places" type="tiled" visible="true"
@@ -37,6 +38,16 @@
       <layer label="Fires" type="feature" visible="false" alpha="1.0"
              popupconfig="popups/PopUp_Fires.xml"
              url="http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Fire/Sheep/FeatureServer/0"/>
+    </operationallayers>
+  </map>
+  -->
+
+  <map wraparound180="true" initialextent="-40300 4664800 -16200 4679000" top="40" addarcgisbasemaps="true">
+    <operationallayers>
+      <layer label="Land use" type="feature" visible="true"
+             url="http://ssw7311f.sims.cranfield.ac.uk:6080/arcgis/rest/services/SDI/SDI/MapServer/1"/>
+      <layer label="AOI" type="feature" visible="true"
+             url="http://ssw7311f.sims.cranfield.ac.uk:6080/arcgis/rest/services/SDI/SDI/MapServer/0"/>
     </operationallayers>
   </map>
 
