@@ -13,6 +13,10 @@ $(document).ready(function () {
             key: 'BC9A493B41014CAABB98F0471D759707'
         });
 
+        var lecture_slide_image = 'images/course_progression.png';
+        var imageBounds = [[0.0, -4.5], [7.1, -0.6]];
+        var progression = L.imageOverlay(lecture_slide_image, imageBounds);
+
         var jsonStyle = {
             "color": "#ff7800",
             "weight": 5,
@@ -41,12 +45,12 @@ $(document).ready(function () {
             }
         };
 
-        var progression_json = L.geoJson(course_progression, jsonOptions);
+        var steps = L.geoJson(course_progression, jsonOptions);
 
         var mapOptions = {
             center: new L.LatLng(-2.8, 4.1),
             zoom: 6.7,
-            layers: [world, progression_json]
+            layers: [world, progression, steps]
         };
         var progression_map = L.map('progression_map', mapOptions);
 
@@ -55,7 +59,8 @@ $(document).ready(function () {
         };
 
         var overlays = {
-            "Progression": progression_json
+            "Progression": progression,
+            "Steps": steps
         };
 
         L.control.layers(baseLayers, overlays).addTo(progression_map);

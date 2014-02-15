@@ -9,6 +9,7 @@
        ]
       },
       "properties": {
+        "text": "Progression",
         "meta_type": "plan",
         "orientation": "descending left-to-right",
         "shape": "arrow"
