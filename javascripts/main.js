@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     var jsonOptions = {
         style: function (feature) {
-            console.log("Feature: " + feature);
+            console.log("JSON Feature: " + feature);
             switch (feature.properties.meta_type) {
                 case 'plan': return { color: "#ff0000" };
                 case 'lecture': return { color: "#0000ff" };
@@ -31,10 +31,11 @@ $(document).ready(function () {
         }
     };
 
+    console.log("JSON from GitHub: (" + course_progression + ")");
     var progression_json = L.geoJson(course_progression, jsonOptions);
 
     var mapOptions = {
-        center: new L.LatLng(35, -2.2),
+        center: new L.LatLng(3.5, -2.2),
         zoom: 10,
         layers: [world, progression_json]
     };
