@@ -23,21 +23,26 @@ $(document).ready(function () {
 
         function addPopupText(feature, layer) {
             // does this feature have a property named text?
-            var popupText = "";
             if (feature.properties) {
+                var popupText = "";
+                var feature_text = "";
                 if (feature.properties.text) {
-                    popupText = feature.properties.text;
+                    feature_text = feature.properties.text;
+                }
+                var description = "";
+                if (feature.properties.description) {
+                    description = feature.properties.description + '<br>';
                 }
 
                 if (feature.properties.link1) {
-                    popupText = '<a href="' + feature.properties.link1 + '">' + popupText + '</a>';
+                    popupText = description + "See " + '<a href="' + feature.properties.link1 + '">' + feature_text + '</a>';
                 }
 
                 if (feature.properties.link2) {
                     popupText += ' and <a href="' + feature.properties.link2 + '">here</a> also';
                 }
 
-                layer.bindPopup("See " + popupText);
+                layer.bindPopup(popupText);
             }
 
         }
@@ -46,16 +51,12 @@ $(document).ready(function () {
             onEachFeature: addPopupText,
             style: function (feature) {
                 switch (feature.properties.meta_type) {
-                    case 'plan': return {
-                        color: "#ff0000"
-                    };
                     case 'lecture': return {
                         color: "#0000ff"
                     };
                 }
             }
         };
-
         var steps = L.geoJson(course_progression, jsonOptions);
 
         var mapOptions = {
@@ -81,10 +82,7 @@ $(document).ready(function () {
             "Steps": steps
         };
 
-        var layerControlOptions = {
-            autoZIndex: true
-        };
-        L.control.layers(baseLayers, overlays, layerControlOptions).addTo(progression_map);
+        L.control.layers(baseLayers, overlays).addTo(progression_map);
     }
 
     $.getJSON("course_progression.geojson", function (result) {

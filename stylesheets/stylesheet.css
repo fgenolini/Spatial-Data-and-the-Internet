@@ -23,9 +23,8 @@ h1 {
 }
 
 #index_header {
-    width: 746px;
-    height: 325px;
-    background-image: url('../images/isleofwight_beach_lilac.png');
+    width: 770px;
+    height: 400px;
     position: relative;
 }
 
@@ -44,8 +43,8 @@ h1 {
 #index_intro {
     margin-left: 10px;
     position: absolute;
-    bottom: 2px;
-    right: 10px;
+    bottom: 20px;
+    left: 5px;
     font-size: 12px;
     line-height: 10px;
 }
@@ -53,6 +52,10 @@ h1 {
 #progression_map {
     width: 600px;
     height: 400px;
+    margin-left: 0px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
 }
 
 #assignment {

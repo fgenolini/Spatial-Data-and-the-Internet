@@ -8,6 +8,7 @@
       },
       "properties": {
         "text": "HTML",
+		"description": "Overview of HTML and web design",
 		"link1": "day1.html",
         "meta_type": "lecture",
         "orientation": "landscape",
@@ -22,6 +23,7 @@
       },
       "properties": {
         "text": "Image Mapping",
+		"description": "Simple HTML image map with hot zones",
 		"link1": "day2.html",
         "meta_type": "lecture",
         "orientation": "landscape",
@@ -36,6 +38,7 @@
       },
       "properties": {
         "text": "JavaScript",
+		"description": "JavaScript web mapping APIs",
 		"link1": "day2.html",
         "meta_type": "lecture",
         "orientation": "landscape",
@@ -50,6 +53,7 @@
       },
       "properties": {
         "text": "XML / GML / KML",
+		"description": "XML driven applications, Google Earth and API",
 		"link1": "day3.html",
         "meta_type": "lecture",
         "orientation": "landscape",
