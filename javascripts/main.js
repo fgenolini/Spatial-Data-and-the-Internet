@@ -19,7 +19,15 @@ $(document).ready(function () {
             "opacity": 0.65
         };
 
+        function addPopupText(feature, layer) {
+            // does this feature have a property named text?
+            if (feature.properties && feature.properties.text) {
+                layer.bindPopup(feature.properties.text);
+            }
+        }
+
         var jsonOptions = {
+            onEachFeature: addPopupText,
             style: function (feature) {
                 switch (feature.properties.meta_type) {
                     case 'plan': return {
@@ -36,8 +44,8 @@ $(document).ready(function () {
         var progression_json = L.geoJson(course_progression, jsonOptions);
 
         var mapOptions = {
-            center: new L.LatLng(-2.8, 4.2),
-            zoom: 6.5,
+            center: new L.LatLng(-2.8, 4.1),
+            zoom: 6.7,
             layers: [world, progression_json]
         };
         var progression_map = L.map('progression_map', mapOptions);
