@@ -1,0 +1,101 @@
+{
+  "type" : "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry" : {
+        "type": "Polygon",
+        "coordinates": [
+          [560.54715, 353.1409], [576.52248, 324.53783], [701.29551, 472.74945], [508.5954, 410.07675],
+          [526.06853, 439.01425], [56.688596, 131.43366], [90.468205, 71.53563],
+          [560.54715, 353.1409]
+        ]
+      },
+      "properties": {
+        "meta_type": "plan",
+        "orientation": "descending left-to-right",
+        "shape": "arrow"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry" : {
+        "type": "Polygon",
+        "coordinates": [
+           [27.078384, 34.593296], [127.315914, 34.493296], [127.315914, 80.574057], [27.078384, 80.674057],
+           [27.078384, 34.593296]
+        ]
+      },
+      "properties": {
+        "text": "HTML",
+        "meta_type": "lecture",
+        "orientation": "landscape",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry" : {
+        "type": "Polygon",
+        "coordinates": [
+           [149.881240, 99.438904], [367.220900, 99.438904], [367.220900, 145.519665], [367.220900, 99.438904],
+           [149.881240, 99.438904]
+        ]
+      },
+      "properties": {
+        "text": "Image Mapping",
+        "meta_type": "lecture",
+        "orientation": "landscape",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry" : {
+        "type": "Polygon",
+        "coordinates": [
+           [294.774350, 187.562410], [444.180520, 187.562410], [444.180520, 232.217992], [294.774350, 232.217992],
+           [294.774350, 187.562410]
+        ]
+      },
+      "properties": {
+        "text": "JavaScript",
+        "meta_type": "lecture",
+        "orientation": "landscape",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry" : {
+        "type": "Polygon",
+        "coordinates": [
+           [440.855100, 276.160980], [688.123500, 276.160980], [688.123500, 321.529152], [440.855100, 321.529152],
+           [440.855100, 276.160980]
+        ]
+      },
+      "properties": {
+        "text": "XML / GML / KML",
+        "meta_type": "lecture",
+        "orientation": "landscape",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry" : {
+        "type": "Polygon",
+        "coordinates": [
+           [567.695980, 364.522030], [765.083160, 364.522030], [765.083160, 410.365261], [567.695908, 410.365261],
+           [567.695980, 364.522030],
+        ]
+      },
+      "properties": {
+        "text": "Web Mapping",
+        "meta_type": "lecture",
+        "orientation": "landscape",
+        "shape": "rectangle"
+      }
+    }
+  ]
+}
