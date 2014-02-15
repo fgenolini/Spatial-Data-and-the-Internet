@@ -7,14 +7,8 @@ if (typeof jQuery === 'undefined') {
 $(document).ready(function () {
     function setupLeaflet(result) {
         var course_progression = result;
-
-        var world = L.tileLayer('http://{s}.tile.cloudmade.com/{key}/22677/256/{z}/{x}/{y}.png', {
-            attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
-            key: 'BC9A493B41014CAABB98F0471D759707'
-        });
-
         var lecture_slide_image = 'images/course_progression.png';
-        var imageBounds = [[-4.5, 0.0], [-0.6, 7.1]];
+        var imageBounds = [[-4.8, 0.0], [-0.8, 7.1]];
         var progression = L.imageOverlay(lecture_slide_image, imageBounds);
 
         var jsonStyle = {
@@ -38,7 +32,6 @@ $(document).ready(function () {
                         color: "#ff0000"
                     };
                     case 'lecture': return {
-                        opacity: 1.0,
                         color: "#0000ff"
                     };
                 }
@@ -50,12 +43,11 @@ $(document).ready(function () {
         var mapOptions = {
             center: new L.LatLng(-2.8, 4.1),
             zoom: 6.7,
-            layers: [world, progression, steps]
+            layers: [progression, steps]
         };
         var progression_map = L.map('progression_map', mapOptions);
 
         var baseLayers = {
-            "World": world
         };
 
         var overlays = {
