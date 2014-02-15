@@ -8,8 +8,12 @@ $(document).ready(function () {
     function setupLeaflet(result) {
         var course_progression = result;
         var lecture_slide_image = 'images/course_progression.png';
-        var imageBounds = [[-4.8, 0.0], [-0.8, 7.1]];
-        var progression = L.imageOverlay(lecture_slide_image, imageBounds);
+        var imageBounds = [[-4.6, 0.0], [-0.6, 6.9]];
+        var imageOptions = {
+            opacity: 0.7,
+            attribution: "Cranfield University (C) 2014, Dr. Steven Hallett"
+        };
+        var progression = L.imageOverlay(lecture_slide_image, imageBounds, imageOptions);
 
         var jsonStyle = {
             "color": "#ff7800",
