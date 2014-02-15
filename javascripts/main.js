@@ -21,7 +21,7 @@ $(document).ready(function () {
     var mapOptions = {
         center: new L.LatLng(35, -2.2),
         zoom: 10,
-        layers: [world, progression]
+        layers: [world, progression_json]
     };
     var progression_map = L.map('progression_map', mapOptions);
 
