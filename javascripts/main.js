@@ -10,11 +10,20 @@ $(document).ready(function () {
         course_progression = result;
     });
 
-    var progression_map = L.map('progression_map').setView([35, -2.2], 4);
 
-    L.tileLayer('http://{s}.tile.cloudmade.com/{key}/22677/256/{z}/{x}/{y}.png', {
+    var world = L.tileLayer('http://{s}.tile.cloudmade.com/{key}/22677/256/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2012 CloudMade',
         key: 'BC9A493B41014CAABB98F0471D759707'
-    }).addTo(progression_map);
-    L.geoJson(course_progression).addTo(progression_map);
+    });
+
+    var progression = L.geoJson(course_progression);
+
+    var mapOptions = {
+        center: new L.LatLng(35, -2.2),
+        zoom: 10,
+        layers: [world, progression]
+    };
+    var progression_map = L.map('progression_map', mapOptions);
+
+    L.controls.layers(world, progression).addTo(progression_map);
 });
