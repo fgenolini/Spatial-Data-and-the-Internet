@@ -36,7 +36,7 @@ $(document).ready(function () {
         var progression_json = L.geoJson(course_progression, jsonOptions);
 
         var mapOptions = {
-            center: new L.LatLng(-2.0, 6),
+            center: new L.LatLng(-2.8, 6),
             zoom: 7,
             layers: [world, progression_json]
         };
