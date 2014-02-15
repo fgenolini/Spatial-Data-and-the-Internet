@@ -14,7 +14,7 @@ $(document).ready(function () {
         });
 
         var lecture_slide_image = 'images/course_progression.png';
-        var imageBounds = [[0.0, -4.5], [7.1, -0.6]];
+        var imageBounds = [[-4.5, 0.0], [-0.6, 7.1]];
         var progression = L.imageOverlay(lecture_slide_image, imageBounds);
 
         var jsonStyle = {
