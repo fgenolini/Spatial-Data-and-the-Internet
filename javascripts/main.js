@@ -11,7 +11,7 @@ $(document).ready(function () {
         var imageBounds = [[-4.9, 0.1], [-0.29, 7.9]];
         var imageOptions = {
             opacity: 0.7,
-            attribution: "Cranfield University (C) 2014, Dr. Steven Hallett"
+            attribution: 'Cranfield University (C) 2014, <a href="http://www.cranfield.ac.uk/about/people-and-resources/academic-profiles/sas-ac-profile/dr-stephen-sh-hallett.html">Dr. Stephen Hallett</a>'
         };
         var progression = L.imageOverlay(lecture_slide_image, imageBounds, imageOptions);
 
@@ -23,9 +23,23 @@ $(document).ready(function () {
 
         function addPopupText(feature, layer) {
             // does this feature have a property named text?
-            if (feature.properties && feature.properties.text) {
-                layer.bindPopup(feature.properties.text);
+            var popupText = "";
+            if (feature.properties) {
+                if (feature.properties.text) {
+                    popupText = feature.properties.text;
+                }
+
+                if (feature.properties.link1) {
+                    popupText = '<a href="' + feature.properties.link1 + '">' + popupText + '</a>';
+                }
+
+                if (feature.properties.link2) {
+                    popupText += ' and <a href="' + feature.properties.link2 + '">here</a> also';
+                }
+
+                layer.bindPopup("See " + popupText);
             }
+
         }
 
         var jsonOptions = {
@@ -45,7 +59,7 @@ $(document).ready(function () {
         var steps = L.geoJson(course_progression, jsonOptions);
 
         var mapOptions = {
-            center: new L.LatLng(-2.8, 4.1),
+            center: new L.LatLng(-2.4, 3.8),
             zoom: 6.7,
             layers: [progression, steps]
         };
