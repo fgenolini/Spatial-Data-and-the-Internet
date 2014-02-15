@@ -22,8 +22,13 @@ $(document).ready(function () {
         var jsonOptions = {
             style: function (feature) {
                 switch (feature.properties.meta_type) {
-                    case 'plan': return { color: "#ff0000" };
-                    case 'lecture': return { color: "#0000ff" };
+                    case 'plan': return {
+                        color: "#ff0000"
+                    };
+                    case 'lecture': return {
+                        opacity: 1.0,
+                        color: "#0000ff"
+                    };
                 }
             }
         };
@@ -31,8 +36,8 @@ $(document).ready(function () {
         var progression_json = L.geoJson(course_progression, jsonOptions);
 
         var mapOptions = {
-            center: new L.LatLng(-2.2, 5),
-            zoom: 6,
+            center: new L.LatLng(-2.2, 6),
+            zoom: 7,
             layers: [world, progression_json]
         };
         var progression_map = L.map('progression_map', mapOptions);
