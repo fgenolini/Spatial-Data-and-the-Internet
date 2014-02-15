@@ -66,14 +66,17 @@ $(document).ready(function () {
         var progression_map = L.map('progression_map', mapOptions);
 
         var baseLayers = {
+            "Progression": progression
         };
 
         var overlays = {
-            "Progression": progression,
             "Steps": steps
         };
 
-        L.control.layers(baseLayers, overlays).addTo(progression_map);
+        var layerControlOptions = {
+            autoZIndex: true
+        };
+        L.control.layers(baseLayers, overlays, layerControlOptions).addTo(progression_map);
     }
 
     $.getJSON("course_progression.geojson", function (result) {
