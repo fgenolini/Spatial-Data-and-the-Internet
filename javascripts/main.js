@@ -16,7 +16,7 @@ $(document).ready(function () {
         key: 'BC9A493B41014CAABB98F0471D759707'
     });
 
-    var progression = L.geoJson(course_progression);
+    var progression_json = L.geoJson(course_progression);
 
     var mapOptions = {
         center: new L.LatLng(35, -2.2),
@@ -25,5 +25,13 @@ $(document).ready(function () {
     };
     var progression_map = L.map('progression_map', mapOptions);
 
-    L.controls.layers(world, progression).addTo(progression_map);
+    var baseLayers = {
+        "World": world
+    };
+
+    var overlays = {
+        "Progression": progression_json
+    };
+
+    L.control.layers(baseLayers, overlays).addTo(progression_map);
 });
