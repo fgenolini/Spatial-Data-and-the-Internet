@@ -50,6 +50,11 @@ h1 {
     line-height: 10px;
 }
 
+#progression_map {
+    width: 600px;
+    height: 400px;
+}
+
 #assignment {
     text-shadow: 4px 4px 4px #aaa;
 }
