@@ -10,12 +10,10 @@ $(document).ready(function () {
         course_progression = result;
     });
 
-    var world = L.tileLayer('http://{s}.tile.cloudmade.com/{key}/22677/256/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2012 CloudMade',
-        key: 'BC9A493B41014CAABB98F0471D759707'
+    var world = L.tileLayer('http://{s}.tile.cloudmade.com/API-key/997/256/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>[…]',
+        maxZoom: 18
     });
-
-    var progression_json = L.geoJson();
 
     var jsonStyle = {
         "color": "#ff7800",
@@ -32,7 +30,8 @@ $(document).ready(function () {
             }
         }
     };
-    progression_json.addData(course_progression, jsonOptions);
+
+    var progression_json = L.geoJson(course_progression, jsonOptions);
 
     var mapOptions = {
         center: new L.LatLng(35, -2.2),
