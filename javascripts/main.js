@@ -10,13 +10,29 @@ $(document).ready(function () {
         course_progression = result;
     });
 
-
     var world = L.tileLayer('http://{s}.tile.cloudmade.com/{key}/22677/256/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2012 CloudMade',
         key: 'BC9A493B41014CAABB98F0471D759707'
     });
 
-    var progression_json = L.geoJson(course_progression);
+    var progression_json = L.geoJson();
+
+    var jsonStyle = {
+        "color": "#ff7800",
+        "weight": 5,
+        "opacity": 0.65
+    };
+
+    var jsonOptions = {
+        style: function (feature) {
+            console.log("Feature: " + feature);
+            switch (feature.properties.meta_type) {
+                case 'plan': return { color: "#ff0000" };
+                case 'lecture': return { color: "#0000ff" };
+            }
+        }
+    };
+    progression_json.addData(course_progression, jsonOptions);
 
     var mapOptions = {
         center: new L.LatLng(35, -2.2),
