@@ -7,6 +7,10 @@ if(typeof jQuery === 'undefined'){
 $(document).ready(function () {
     var course_progression;
     $.getJSON("course_progression.geojson", function (result) {
-        console.log(result);
+        course_progression = result;
     });
+
+    var progression_map = L.map('progression_map').setView([35, -2.2], 4);
+
+    L.geoJson(course_progression).addTo(progression_map);
 });
