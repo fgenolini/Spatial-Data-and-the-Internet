@@ -11,7 +11,7 @@ $(document).ready(function () {
         var imageBounds = [[-4.9, 0.1], [-0.29, 7.9]];
         var imageOptions = {
             opacity: 0.7,
-            attribution: 'Cranfield University (C) 2014, <a href="http://www.cranfield.ac.uk/about/people-and-resources/academic-profiles/sas-ac-profile/dr-stephen-sh-hallett.html">Dr. Stephen Hallett</a>'
+            attribution: '&copy; 2014 Cranfield University, <a href="http://www.cranfield.ac.uk/about/people-and-resources/academic-profiles/sas-ac-profile/dr-stephen-sh-hallett.html">Dr. Stephen Hallett</a>'
         };
         var progression = L.imageOverlay(lecture_slide_image, imageBounds, imageOptions);
 
@@ -59,11 +59,19 @@ $(document).ready(function () {
         var steps = L.geoJson(course_progression, jsonOptions);
 
         var mapOptions = {
-            center: new L.LatLng(-2.4, 3.8),
+            center: new L.LatLng(-2.6, 4.0),
+            zoomControl: false,
+            minZoom: 6.7,
+            maxZoom: 6.7,
             zoom: 6.7,
             layers: [progression, steps]
         };
         var progression_map = L.map('progression_map', mapOptions);
+        progression_map.touchZoom.disable();
+        progression_map.doubleClickZoom.disable();
+        progression_map.scrollWheelZoom.disable();
+        progression_map.boxZoom.disable();
+        progression_map.keyboard.disable();
 
         var baseLayers = {
             "Progression": progression
