@@ -7,11 +7,13 @@ if (typeof jQuery === 'undefined') {
 $(document).ready(function () {
     function setupLeaflet(result) {
         var course_progression = result;
-
-        var world = L.tileLayer('http://{s}.tile.cloudmade.com/{key}/22677/256/{z}/{x}/{y}.png', {
-            attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
-            key: 'BC9A493B41014CAABB98F0471D759707'
-        });
+        var lecture_slide_image = 'images/course_progression.png';
+        var imageBounds = [[-4.9, 0.1], [-0.29, 7.9]];
+        var imageOptions = {
+            opacity: 0.7,
+            attribution: '&copy; 2014 Cranfield University, <a href="http://www.cranfield.ac.uk/about/people-and-resources/academic-profiles/sas-ac-profile/dr-stephen-sh-hallett.html">Dr. Stephen Hallett</a>'
+        };
+        var progression = L.imageOverlay(lecture_slide_image, imageBounds, imageOptions);
 
         var jsonStyle = {
             "color": "#ff7800",
@@ -21,41 +23,63 @@ $(document).ready(function () {
 
         function addPopupText(feature, layer) {
             // does this feature have a property named text?
-            if (feature.properties && feature.properties.text) {
-                layer.bindPopup(feature.properties.text);
+            if (feature.properties) {
+                var popupText = "";
+                var feature_text = "";
+                if (feature.properties.text) {
+                    feature_text = feature.properties.text;
+                }
+                var description = "";
+                if (feature.properties.description) {
+                    description = feature.properties.description + '<br>';
+                }
+
+                if (feature.properties.link1) {
+                    popupText = description + "See " + '<a href="' + feature.properties.link1 + '">' + feature_text + '</a>';
+                }
+
+                if (feature.properties.link2) {
+                    popupText += ' and <a href="' + feature.properties.link2 + '">here</a> also';
+                }
+
+                layer.bindPopup(popupText);
             }
+
         }
 
         var jsonOptions = {
             onEachFeature: addPopupText,
             style: function (feature) {
                 switch (feature.properties.meta_type) {
-                    case 'plan': return {
-                        color: "#ff0000"
-                    };
                     case 'lecture': return {
-                        opacity: 1.0,
                         color: "#0000ff"
                     };
                 }
             }
         };
-
-        var progression_json = L.geoJson(course_progression, jsonOptions);
+        var steps = L.geoJson(course_progression, jsonOptions);
 
         var mapOptions = {
-            center: new L.LatLng(-2.8, 4.1),
+            center: new L.LatLng(-2.6, 4.0),
+            zoomControl: false,
+            minZoom: 6.7,
+            maxZoom: 6.7,
             zoom: 6.7,
-            layers: [world, progression_json]
+            layers: [progression, steps]
         };
         var progression_map = L.map('progression_map', mapOptions);
+        progression_map.touchZoom.disable();
+        progression_map.doubleClickZoom.disable();
+        progression_map.scrollWheelZoom.disable();
+        progression_map.boxZoom.disable();
+        progression_map.keyboard.disable();
 
         var baseLayers = {
-            "World": world
+            "Progression": progression
         };
 
         var overlays = {
-            "Progression": progression_json
+            "Steps": steps
         };
 
         L.control.layers(baseLayers, overlays).addTo(progression_map);

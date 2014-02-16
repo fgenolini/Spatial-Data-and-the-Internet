@@ -1,6 +1,6 @@
 ﻿/* Day 3 of A1136: Spatial Data and the Internet */
 body {
-    background-color: lightblue;
+    background-color: palevioletred;
 }
 
 h1 {
@@ -13,6 +13,34 @@ h1 {
 p {
     font-family: 'Segoe UI', sans-serif;
     font-weight: 400;
+    font-size: 12px;
+    line-height: 10px;
+}
+
+#day3_header {
+    width: 746px;
+    height: 325px;
+    background-image: url('../images/isleofwight_beach_lilac.png');
+    position: relative;
+}
+
+#day3_title {
+    float: right;
+    height: 280px;
+    width: 150px;
+    margin: 10px 10px 0px 0px;
+    word-wrap: break-word;
+    line-height: 40px;
+    transform: rotate(9deg);
+    -ms-transform: rotate(9deg); /* IE 9 */
+    -webkit-transform: rotate(9deg); /* Safari and Chrome */
+}
+
+#day3_intro {
+    margin-left: 10px;
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
     font-size: 12px;
     line-height: 10px;
 }

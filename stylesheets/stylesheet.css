@@ -5,7 +5,6 @@
   and edited to remove the text, colour changed to lilac
 */
 body {
-    background-color: palevioletred;
 }
 
 p {
@@ -23,9 +22,8 @@ h1 {
 }
 
 #index_header {
-    width: 746px;
-    height: 325px;
-    background-image: url('../images/isleofwight_beach_lilac.png');
+    width: 770px;
+    height: 400px;
     position: relative;
 }
 
@@ -44,8 +42,8 @@ h1 {
 #index_intro {
     margin-left: 10px;
     position: absolute;
-    bottom: 2px;
-    right: 10px;
+    bottom: 20px;
+    left: 5px;
     font-size: 12px;
     line-height: 10px;
 }
@@ -53,6 +51,62 @@ h1 {
 #progression_map {
     width: 600px;
     height: 400px;
+    margin-left: 0px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+#day_article {
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+p.day_para {
+    width: 140px;
+    height: 75px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+a.day {
+    text-align: center;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    height: 75px;
+    width: 150px;
+    line-height: 20px;
+}
+
+#day1 {
+    background-image: url('../images/day1_chevron.png');
+}
+
+#day2 {
+    background-image: url('../images/day2_chevron.png');
+}
+
+#day3 {
+    background-image: url('../images/day3_chevron.png');
+}
+
+#day4 {
+    background-image: url('../images/day4_chevron.png');
+}
+
+span.day_text {
+    text-align: center;
+    margin-left: 10px;
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    line-height: 15px;
+    height: 30px;
+    width: 110px;
 }
 
 #assignment {
