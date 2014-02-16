@@ -92,6 +92,10 @@ a.day {
     background-image: url('../images/day3_chevron.png');
 }
 
+#day4 {
+    background-image: url('../images/day4_chevron.png');
+}
+
 span.day_text {
     text-align: center;
     margin-left: 10px;
