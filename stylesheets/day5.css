@@ -26,9 +26,9 @@ p {
 
 #day5_title {
     float: right;
-    height: 280px;
+    height: 300px;
     width: 180px;
-    margin: 10px 2px 0px -3px;
+    margin: 15px -10px 0px 10px;
     word-wrap: break-word;
     line-height: 50px;
     transform: rotate(9deg);
