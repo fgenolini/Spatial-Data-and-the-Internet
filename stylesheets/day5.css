@@ -44,3 +44,8 @@ p {
     font-size: 12px;
     line-height: 10px;
 }
+
+#foss_map {
+    width: 500px;
+    height: 380px;
+}
