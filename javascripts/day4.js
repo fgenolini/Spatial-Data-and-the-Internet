@@ -12,7 +12,7 @@ $(document).ready(function () {
     // ESRI ArcGIS Server located on the private LAN
     // within Cranfield University, not a public server
     // Aitana sample data set
-    var cranfieldUniversityLocalServer = "http://ssw7311f.sims.cranfield.ac.uk:6080/arcgis/rest/services/SDI/SDI/MapServer";
+    //var cranfieldUniversityLocalServer = "http://ssw7311f.sims.cranfield.ac.uk:6080/arcgis/rest/services/SDI/SDI/MapServer";
 
     // Public ESRI base map layer
     var esriPublicServer = "http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer";
@@ -31,15 +31,18 @@ $(document).ready(function () {
         var map = new esri.Map("map", esriMapOptions);
 
         // Base map showing cultural information
-        var baseMap = new esri.layers.ArcGISTiledMapServiceLayer(esriPublicServer);
+        var baseMap = new esri.layers.ArcGISTiledMapServiceLayer(esriPublicServer, { opacity: 0.4 });
         map.addLayer(baseMap);
 
-        // Cranfield University sample data set served from private server
-        var cranfieldLayerOptions = {
-            opacity: 0.6
-        };
-        var layer = new esri.layers.ArcGISDynamicMapServiceLayer(cranfieldUniversityLocalServer,
-            cranfieldLayerOptions);
+        //var cranfieldLayerOptions = {
+        //    opacity: 0.6
+        //};
+        //var layer = new esri.layers.ArcGISDynamicMapServiceLayer(cranfieldUniversityLocalServer,
+        //    cranfieldLayerOptions);
+        // WMS data from public server
+        var wmsLayer = new esri.layers.WMSLayer("http://sampleserver1.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer");
+        wmsLayer.setVisibleLayers([2]);
+        wmsLayer.setImageFormat("png");
         map.addLayer(layer);
         var resizeTimer;
         dojo.connect(map, 'onLoad', function (theMap) {
