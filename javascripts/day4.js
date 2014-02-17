@@ -18,7 +18,21 @@ $(document).ready(function () {
         "esri/dijit/Legend",
         "dojo/domReady!"
     ], function (Map, arcgisUtils, Legend) {
-        arcgisUtils.createMap(fgenoliniAitanaArcGisOnlineMapId, "arcgis_map").then(function (response) {
+        var configOptions = {
+            webmap: fgenoliniAitanaArcGisOnlineMapId,
+            title: "",
+            subtitle: "",
+            sharingurl: "http://www.arcgis.com/sharing/content/items"
+        };
+        arcgisUtils.arcgisUrl = configOptions.sharingurl;
+        esri.config.defaults.io.proxyUrl = "/proxy";
+        var urlObject = esri.urlToObject(document.location.href);
+        urlObject.query = urlObject.query || {};
+        if (urlObject.query && urlObject.query.webmap) {
+            configOptions.webmap = urlObject.query.webmap;
+        }
+
+        arcgisUtils.createMap(configOptions.webmap, "arcgis_map").then(function (response) {
             arcgis_map = response.map;
             var legend = new Legend({
                 map: arcgis_map,
