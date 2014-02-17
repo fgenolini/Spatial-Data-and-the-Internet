@@ -21,6 +21,7 @@ $(document).ready(function () {
     dojo.require("dijit.layout.BorderContainer");
     dojo.require("dijit.layout.ContentPane");
     dojo.require("esri.map");
+    dojo.require("esri.layers.WMSLayer");
 
     function init() {
         var esriMapOptions = {
@@ -43,7 +44,7 @@ $(document).ready(function () {
         var wmsLayer = new esri.layers.WMSLayer("http://sampleserver1.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer");
         wmsLayer.setVisibleLayers([2]);
         wmsLayer.setImageFormat("png");
-        map.addLayer(layer);
+        map.addLayer(wmsLayer);
         var resizeTimer;
         dojo.connect(map, 'onLoad', function (theMap) {
             dojo.connect(dijit.byId('map'), 'resize', function () {
