@@ -1,20 +1,27 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-<!--
-   Assignment for module A1136: Spatial Data and the Internet
-   Cranfield  University (UK)
--->
+<html>
 <head>
-    <meta charset="utf-8" />
-    <title>Isle of Wight</title>
+    <meta charset="utf-8">
+    <title>Tutorial: Hello Dojo!</title>
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/isle_of_wight.css">
 </head>
 <body>
-    <p>
-        Not started yet
-    </p>
+    <h1 id="greeting">Hello</h1>
     <script type="text/javascript" src="javascripts/google_analytics.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        var dojoConfig = {
+            async: true,
+            // This code registers the correct location of the "isle_of_wight"
+            // package so we can load Dojo from the CDN whilst still
+            // being able to load local modules
+            packages: [{
+                name: "isle_of_wight",
+                location: location.pathname.replace(/\/[^/]*$/, '') + '/isle_of_wight'
+            }]
+        };
+    </script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js"></script>
     <script type="text/javascript" src="javascripts/isle_of_wight.js"></script>
 </body>
 </html>
