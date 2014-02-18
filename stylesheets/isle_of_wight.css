@@ -9,8 +9,21 @@ html, body {
 #appLayout {
     height: 100%;
 }
+
+#topTitle {
+    height: 50px;
+}
+
 #leftCol {
     width: 14em;
+}
+
+#rightCol {
+    width: 7em;
+}
+
+#bottomStatus {
+    height: 20px;
 }
  
 .claro .mdiLayout .edgePanel {
