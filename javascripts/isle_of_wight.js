@@ -7,12 +7,21 @@ if (typeof jQuery === 'undefined') {
 
 $(document).ready(function () {
     require([
-        'isle_of_wight/soil'
-    ], function (soil) {
-        soil.setText('greeting', 'Hello Dojo!');
-
+        'dojo/parser',
+        'isle_of_wight/soil',
+        'dijit/form/Button',
+        'dijit/layout/TabContainer',
+        'dijit/layout/ContentPane'
+    ], function (parser, soil) {
+        parser.parse();
+        var soil_layer = isle_of_wight.Soil(
+            {
+                soilLayerUrl: 'my_test_soil.geojson'
+            }
+        );
+        soil_layer.setText('greeting', 'Hello Dojo!');
         setTimeout(function () {
-            soil.restoreText('greeting');
+            soil_layer.restoreText('greeting');
         }, 3000);
     });
 });
