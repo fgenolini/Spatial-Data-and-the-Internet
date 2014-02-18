@@ -93,7 +93,10 @@ $(document).ready(function () {
 
     // After Open Layers Map API is loaded, create map objects and display them
     function createOpenLayersMaps() {
-        var canadaMap = new OpenLayers.Map('map_canada');
+        var canadaMapOptions = {
+            center: new OpenLayers.LonLat(-73.55, 45.51)
+        };
+        var canadaMap = new OpenLayers.Map('map_canada', canadaMapOptions);
         var wholeEarth = new OpenLayers.Layer.WMS("OpenLayers WMS",
                 "http://vmap0.tiles.osgeo.org/wms/vmap0",
                 { layers: 'basic' });
@@ -108,11 +111,9 @@ $(document).ready(function () {
                 isBaseLayer: false,
                 visibility: false
             });
-        // OSM is not in the same projection as the others, don't use
-        var osm = new OpenLayers.Layer.OSM();
-        canadaMap.addLayers([wholeEarth, canada, osm]);
+        canadaMap.addLayers([wholeEarth, canada]);
         canadaMap.addControl(new OpenLayers.Control.LayerSwitcher());
-        canadaMap.zoomToMaxExtent();
+        canadaMap.zoomTo(4);
     }
 
     // After Leaflet Map API is loaded, create map objects and display them

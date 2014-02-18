@@ -1,57 +1,47 @@
 /*
 Day 4 of module A1136 Spatial Data and the Internet, Cranfield University (UK)
 
-The Aitana dataset will only work from within the Cranfield University LAN,
-as it uses a local private PC (not on the Internet) as ArcGIS Server
+The Aitana dataset was supplied by Cranfield University during the course week,
+then uploaded to ArcGIS online as shapefile, then a public web map was created.
+This script utilises the public web map
 */
 if (typeof jQuery === 'undefined') {
     document.write(unescape("%3Cscript src='javascripts/jquery-1.11.0.min.js' type='text/javascript'%3E%3C/script%3E"));
 }
 
 $(document).ready(function () {
-    // ESRI ArcGIS Server located on the private LAN
-    // within Cranfield University, not a public server
-    // Aitana sample data set
-    var cranfieldUniversityLocalServer = "http://ssw7311f.sims.cranfield.ac.uk:6080/arcgis/rest/services/SDI/SDI/MapServer";
-
-    // Public ESRI base map layer
-    var esriPublicServer = "http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer";
-
-    var djConfig = { parseOnLoad: true };
-    dojo.require("dijit.layout.BorderContainer");
-    dojo.require("dijit.layout.ContentPane");
-    dojo.require("esri.map");
-
-    function init() {
-        var esriMapOptions = {
-            center: [-0.268542, 38.638987],
-            zoom: 12,
-            basemap: "streets"
+    var dojoConfig = { parseOnLoad: true };
+    require([
+        "esri/map",
+        "esri/arcgis/utils",
+        "esri/dijit/Legend",
+        "dojo/domReady!"
+    ], function (Map, arcgisUtils, Legend) {
+        var fgenoliniAitanaArcGisOnlineMapId = "e297c36a60424a0181ad64572ffaaaf9";
+        var configOptions = {
+            webmap: fgenoliniAitanaArcGisOnlineMapId,
+            title: "",
+            subtitle: "",
+            sharingurl: "http://www.arcgis.com/sharing/content/items"
         };
-        var map = new esri.Map("map", esriMapOptions);
 
-        // Base map showing cultural information
-        var baseMap = new esri.layers.ArcGISTiledMapServiceLayer(esriPublicServer);
-        map.addLayer(baseMap);
+        // Proxy must be setup otherwise CORS will prevent browser from accessing data
+        arcgisUtils.arcgisUrl = configOptions.sharingurl;
+        esri.config.defaults.io.proxyUrl = "/proxy";
+        var urlObject = esri.urlToObject(document.location.href);
+        urlObject.query = urlObject.query || {};
+        if (urlObject.query && urlObject.query.webmap) {
+            configOptions.webmap = urlObject.query.webmap;
+        }
 
-        // Cranfield University sample data set served from private server
-        var cranfieldLayerOptions = {
-            opacity: 0.6
-        };
-        var layer = new esri.layers.ArcGISDynamicMapServiceLayer(cranfieldUniversityLocalServer,
-            cranfieldLayerOptions);
-        map.addLayer(layer);
-        var resizeTimer;
-        dojo.connect(map, 'onLoad', function (theMap) {
-            dojo.connect(dijit.byId('map'), 'resize', function () {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(function () {
-                    map.resize();
-                    map.reposition();
-                }, 500);
-            });
+        arcgisUtils.createMap(configOptions.webmap, "arcgis_map").then(function (response) {
+            var arcgis_map = response.map;
+            var legend = new Legend({
+                map: arcgis_map,
+                layerInfos: (arcgisUtils.getLegendLayers(response))
+            }, "arcgis_legend");
+
+            legend.startup();
         });
-    }
-
-    dojo.addOnLoad(init);
+    });
 });

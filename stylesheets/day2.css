@@ -49,6 +49,27 @@ p {
     color: white;
 }
 
+/* unvisited link */
+#day2_intro a:link {
+    color: #FF0000;
+}
+
+/* visited link */
+#day2_intro a:visited {
+    color: #FF10F0;
+}
+
+/* mouse over link */
+#day2_intro a:hover {
+    color: #FFFFFF;
+}
+
+/* selected link */
+#day2_intro a:active {
+    color: #00FF00;
+}
+
+
 #day2_intro {
     margin-left: 10px;
     position: absolute;

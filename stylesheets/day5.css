@@ -1,1 +1,51 @@
 ﻿/* Day 5 (last day) of A1136: Spatial Data and the Internet */
+body {
+    background-color: sandybrown;
+}
+
+h1 {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 30px;
+}
+
+p {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 10px;
+}
+
+#day5_header {
+    width: 746px;
+    height: 325px;
+    background-image: url('../images/isleofwight_augmented_reality.png');
+    position: relative;
+}
+
+#day5_title {
+    float: right;
+    height: 300px;
+    width: 180px;
+    margin: 15px -10px 0px 10px;
+    word-wrap: break-word;
+    line-height: 50px;
+    transform: rotate(9deg);
+    -ms-transform: rotate(9deg); /* IE 9 */
+    -webkit-transform: rotate(9deg); /* Safari and Chrome */
+}
+
+#day5_intro {
+    margin-left: 10px;
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    font-size: 12px;
+    line-height: 10px;
+}
+
+#foss_map {
+    width: 500px;
+    height: 380px;
+}

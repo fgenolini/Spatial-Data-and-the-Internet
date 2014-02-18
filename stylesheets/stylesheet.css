@@ -96,6 +96,10 @@ a.day {
     background-image: url('../images/day4_chevron.png');
 }
 
+#day5 {
+    background-image: url('../images/day5_chevron.png');
+}
+
 span.day_text {
     text-align: center;
     margin-left: 10px;
