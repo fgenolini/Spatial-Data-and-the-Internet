@@ -21,7 +21,7 @@ $(document).ready(function () {
 
     var foss_layer = new OpenLayers.Layer.OSM("OpenStreetMap");
 
-    var land_registry = new OpenLayers.Layer.WMS("UK land registry (INSPIRE WMS)",
+    var england_land_registry = new OpenLayers.Layer.WMS("England Land Registry Parcels",
         "http://inspire.landregistry.gov.uk/inspire/ows",
         {
             layers: 'inspire:CP.CadastralParcel',
@@ -32,7 +32,18 @@ $(document).ready(function () {
         }
         );
 
-    foss_map.addLayers([google_layer, foss_layer, land_registry]);
+    var scotland_land_register = new OpenLayers.Layer.WMS("Scotland Land Register Title Seed Points",
+        "http://ros.datafeed.locationcentre.co.uk/geoserver/ROS/wms",
+        {
+            layers: 'CP.CadastralParcel',
+            format: "image/png",
+            transparent: true
+        }, {
+            opacity: 0.5
+        }
+        );
+
+    foss_map.addLayers([google_layer, foss_layer, england_land_registry, scotland_land_register]);
     foss_map.addControl(new OpenLayers.Control.LayerSwitcher());
     var center = new OpenLayers.LonLat(lon, lat);
     center.transform(new OpenLayers.Projection("EPSG:4326"), foss_map.getProjectionObject());
