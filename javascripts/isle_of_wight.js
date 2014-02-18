@@ -8,7 +8,7 @@ if (typeof jQuery === 'undefined') {
 $(document).ready(function () {
     require([
         'isle_of_wight/soil'
-    ], function (myModule) {
+    ], function (soil) {
         soil.setText('greeting', 'Hello Dojo!');
 
         setTimeout(function () {
