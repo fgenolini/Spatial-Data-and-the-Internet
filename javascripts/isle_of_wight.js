@@ -12,7 +12,7 @@ $(document).ready(function () {
         soil.setText('greeting', 'Hello Dojo!');
 
         setTimeout(function () {
-            myModule.restoreText('greeting');
+            soil.restoreText('greeting');
         }, 3000);
     });
 });
