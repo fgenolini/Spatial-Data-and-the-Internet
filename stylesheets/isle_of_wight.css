@@ -1,11 +1,44 @@
 ﻿/* Assignment for A1136: Spatial Data and the Internet */
-body {
-    background-color: burlywood;
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+ 
+#appLayout {
+    height: 100%;
+}
+#leftCol {
+    width: 14em;
+}
+ 
+.claro .mdiLayout .edgePanel {
+    background-color: #d0e9fc;
+}
+ 
+#viewsChart {
+    width: 550px;
+    height: 550px;
 }
 
 p {
     font-family: 'Segoe UI', sans-serif;
     font-weight: 400;
-    font-size: 36px;
+    font-size: 12px;
     line-height: 30px;
+}
+
+h1 {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 20px;
+}
+
+h2 {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
 }

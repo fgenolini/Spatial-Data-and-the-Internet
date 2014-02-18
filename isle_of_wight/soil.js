@@ -1,18 +1,14 @@
 define([
     'dojo/_base/declare',
-    'dojo/_base/lang',
-    'dojo/_base/array',
     'dojo/dom',
     'dojo/dom-construct',
     'dojo/query',
     'dojo/fx',
     'dojo/NodeList-dom',
-    'dojo/NodeList-traverse',
-    'dojo/NodeList-manipulate',
     "dojo/NodeList-fx",
     "dojo/NodeList-data"
-], function (declare, lang, array, dom, domConstruct, query, fx) {
-    // Once all modules in the dependency list have loaded, this
+], function (declare, dom, domConstruct, query, fx) {
+     // Once all modules in the dependency list have loaded, this
     // function is called to define the isle_of_wight/soil module.
 
     // This returned object becomes the defined value of this module

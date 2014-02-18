@@ -10,6 +10,8 @@ $(document).ready(function () {
         'dojo/parser',
         'isle_of_wight/soil',
         'dijit/form/Button',
+        'dijit/layout/BorderContainer',
+        'dijit/layout/ContentPane',
         'dijit/layout/TabContainer',
         'dijit/layout/ContentPane'
     ], function (parser, soil) {
@@ -19,9 +21,9 @@ $(document).ready(function () {
                 soilLayerUrl: 'my_test_soil.geojson'
             }
         );
-        soil_layer.setText('greeting', 'Hello Dojo!');
-        setTimeout(function () {
-            soil_layer.restoreText('greeting');
-        }, 3000);
+        //soil_layer.setText('greeting', 'Hello Dojo!');
+        //setTimeout(function () {
+        //    soil_layer.restoreText('greeting');
+        //}, 3000);
     });
 });
