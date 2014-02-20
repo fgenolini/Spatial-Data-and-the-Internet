@@ -3,5 +3,4 @@ if (typeof jQuery === 'undefined') {
 }
 
 $(document).ready(function () {
-    $('#player').attr('src', 'http://youtu.be/FNDTVUWSLxE');
 });
